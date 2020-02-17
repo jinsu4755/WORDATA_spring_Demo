@@ -8,7 +8,7 @@
 | ------------------ | ------------------------------------------------------------ | ------------- |
 | WORDATA_Demo       | - WORDATA 프젝 프론트에서 static, templates 확인             |               |
 | test               | - thymeleaf, MySQL, Spring Security, mybatis로 간단한 로그인 구현 </br> - 로그인 화면 커스텀 필요 |               |
-| Wordata_JPA        | - JPA 공부 1회차                                             | [요약](/tree/master/Wordata_JPA) |
+| Wordata_JPA        | - JPA 공부 1회차                                             | [요약](/Wordata_JPA/README.md) |
 
 ---
 

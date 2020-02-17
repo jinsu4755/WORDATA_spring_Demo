@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html th:replace="~{layout :: layout(~{::section})}"
+	xmlns:th="http://thymeleaf.org">
+<!-- 
+layout이란 파일에서 layout 함수에 section 태그값을 넣어준다
+ -->
+<body>
+	<section class="container">
+		<h1>회원가입 페이지</h1>
+		<form method="POST">
+			<span>id</span>
+			<input type="text" name="id" th:value="${account.id}">
+			<br> 
+			<span>pass</span>
+			<input type="text" name="password" th:value="${account.password}"> 
+			<br>
+			<span>name</span>
+			<input type="text" name="name" th:value="${account.name}">
+			<hr>
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+	</section>
+</body>
+</html>

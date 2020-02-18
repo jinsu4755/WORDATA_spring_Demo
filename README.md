@@ -8,8 +8,8 @@
 | ------------------ | ------------------------------------------------------------ | ------------- |
 | WORDATA_Demo       | - WORDATA 프젝 프론트에서 static, templates 확인             |               |
 | test               | - thymeleaf, MySQL, Spring Security, mybatis로 간단한 로그인 구현 </br> - 로그인 화면 커스텀 필요 |               |
-| Wordata_JPA        | - JPA 공부 1회차 [목표](###jpa_1회차_목표)                | [요약](/Wordata_JPA/README.md) |
-| Wordata_JPA2 | - JPA 공부 2회차 [목표](###jpa_2회차_목표) | [요약](/Wordata_JPA2/README.md) |
+| Wordata_JPA        | - JPA 공부 1회차 [목표](#jpa_1)                | [요약](/Wordata_JPA/README.md) |
+| Wordata_JPA2 | - JPA 공부 2회차 [목표](#jpa_2) | [요약](/Wordata_JPA2/README.md) |
 |  |  |  |
 
 ---
@@ -66,7 +66,7 @@ employee 와 address 관계는 1 대 1 관계이다
 
 ---
 
-### JPA 1회차 목표
+### JPA 1
 
 기본적인 제작
 
@@ -76,7 +76,7 @@ employee 와 address 관계는 1 대 1 관계이다
 
 ---
 
-### JPA 2회차 목표
+### JPA 2
 
 - 1차
 

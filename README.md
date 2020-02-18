@@ -2,21 +2,33 @@
 
 ### WORDATA 프로젝트를 위한 공부
 
-
-
-| 프로젝트 폴더 이름 | 내용                                                         | 비고          |
-| ------------------ | ------------------------------------------------------------ | ------------- |
-| WORDATA_Demo       | - WORDATA 프젝 프론트에서 static, templates 확인             |               |
-| test               | - thymeleaf, MySQL, Spring Security, mybatis로 간단한 로그인 구현 </br> - 로그인 화면 커스텀 필요 |               |
-| Wordata_JPA        | - JPA 공부 1회차 [목표](#jpa-1)               | [요약](/Wordata_JPA/README.md) |
-| Wordata_JPA2 | - JPA 공부 2회차 [목표](#jpa-2) | [요약](/Wordata_JPA2/README.md) |
-|  |  |  |
+| 프로젝트 폴더 이름 | 내용                                                         | 요약        | 비고     |
+| ------------------ | ------------------------------------------------------------ | ------------- | ------------- |
+| WORDATA_Demo       | - WORDATA 프젝 프론트에서 static, templates 확인             |               |               |
+| test               | - thymeleaf, MySQL, Spring Security, mybatis로 간단한 로그인 구현 </br> - 로그인 화면 커스텀 필요 |               |               |
+| Wordata_JPA        | - JPA 공부 1회차 [목표](#jpa-1)             | [요약](/Wordata_JPA/README.md) | [DB](#wordata-jpa-db) |
+| Wordata_JPA2 | - JPA 공부 2회차 [목표](#jpa-2) | [요약](/Wordata_JPA2/README.md) | [DB](#wordata-jpa-db) |
+|  |  |  |  |
 
 ---
+
+### WORDATA_Demo
+
+사용된 DB나 따로 설정할 것은 폴더 내부 [README](/WORDATA_Demo/README.md) 참조
 
 WORDATA_Demo를 위해 Clone할 경우 이클립스에서 Import시에는 해당 폴더와 상위폴더 정도만 import하고 그 이외는 필요 없음
 
 ---
+
+### test
+
+간단하게 mybatis/MySQL 환경에서 Spring Security를 구현하기 위한 test DB로 진행하여 따로 설명은 없음.
+
+---
+
+## Wordata JPA DB
+
+Wordata_JPA 를 위한 DB 페키지
 
 - **department**
 

@@ -6,9 +6,9 @@
 | ------------------ | ------------------------------------------------------------ | ------------- | ------------- |
 | WORDATA_Demo       | - WORDATA 프젝 프론트에서 static, templates 확인             |               |               |
 | test               | - thymeleaf, MySQL, Spring Security, mybatis로 간단한 로그인 구현 </br> - 로그인 화면 커스텀 필요 |               |               |
-| Wordata_JPA        | - JPA 공부 1회차 [목표](#jpa-1)             | [요약](/Wordata_JPA/README.md) | [DB](#wordata-jpa-db) |
-| Wordata_JPA2 | - JPA 공부 2회차 [목표](#jpa-2) | [요약](/Wordata_JPA2/README.md) | [DB](#wordata-jpa-db) |
-|  |  |  |  |
+| Wordata_JPA        | - JPA 공부 1회차 [목표](#jpa-1)</br> 주제: JPA 기초 | [요약](/Wordata_JPA/README.md) | [DB](#wordata-jpa-db(1st)) |
+| Wordata_JPA2 | - JPA 공부 2회차 [목표](#jpa-2)</br> 주제: JPA relationship mapping 1 | [요약](/Wordata_JPA2/README.md) | [DB](#wordata-jpa-db(1st)) |
+| Wordata_JPA3 | -JPA 공부 3회차 [목표](#jpa-3)</br> 주제: JPA relationship mapping 2 |  | [DB](#wordata-jpa-db(2nd)) |
 
 ---
 
@@ -26,7 +26,7 @@ WORDATA_Demo를 위해 Clone할 경우 이클립스에서 Import시에는 해당
 
 ---
 
-## Wordata JPA DB
+## Wordata JPA DB(1st)
 
 Wordata_JPA 를 위한 DB 페키지
 
@@ -78,9 +78,19 @@ employee 와 address 관계는 1 대 1 관계이다
 
 ---
 
+## Wordata JPA DB(2nd)
+
+Wordata JPA를 위한 DB
+
+
+
+
+
+---
+
 ### JPA 1
 
-기본적인 제작
+
 
 </br>
 

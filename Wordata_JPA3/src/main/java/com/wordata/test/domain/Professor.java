@@ -8,6 +8,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -17,26 +19,19 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 @Data
-@ToString(exclude = { "students", "courses", "professors" })
-@EqualsAndHashCode(exclude = { "students", "courses", "professors" }) // 해당 변수들은 다른 테이블과 관계 구현이므로 무시
+@ToString(exclude = { "department", "courses" })
+@EqualsAndHashCode(exclude = { "department", "courses" })
 @Entity
-public class Department {
+public class Professor {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int id;
-	
-	@Column(name = "departmentName")
+	@Column(name = "professorName")
 	String name;
-	
+	@ManyToOne
+	@JoinColumn(name = "departmentId")
+	Department department;
 	@JsonIgnore
-	@OneToMany(mappedBy = "department", fetch = FetchType.LAZY)
-	List<Student> students;
-	
-	@JsonIgnore
-	@OneToMany(mappedBy = "department", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "professor", fetch = FetchType.LAZY)
 	List<Course> courses;
-	
-	@JsonIgnore
-	@OneToMany(mappedBy = "department", fetch = FetchType.LAZY)
-	List<Professor> professors;
 }

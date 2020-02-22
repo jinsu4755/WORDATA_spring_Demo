@@ -6,9 +6,9 @@
 | ------------------ | ------------------------------------------------------------ | ------------- | ------------- |
 | WORDATA_Demo       | - WORDATA 프젝 프론트에서 static, templates 확인             |               |               |
 | test               | - thymeleaf, MySQL, Spring Security, mybatis로 간단한 로그인 구현 </br> - 로그인 화면 커스텀 필요 |               |               |
-| Wordata_JPA        | - JPA 공부 1회차 [목표](#jpa-1)</br> 주제: JPA 기초 | [요약](/Wordata_JPA/README.md) | [DB](#wordata-jpa-db(1st)) |
-| Wordata_JPA2 | - JPA 공부 2회차 [목표](#jpa-2)</br> 주제: JPA relationship mapping 1 | [요약](/Wordata_JPA2/README.md) | [DB](#wordata-jpa-db(1st)) |
-| Wordata_JPA3 | -JPA 공부 3회차 [목표](#jpa-3)</br> 주제: JPA relationship mapping 2 |  | [DB](#wordata-jpa-db(2nd)) |
+| Wordata_JPA        | - JPA 공부 1회차 [목표](#jpa-1)</br> 주제: JPA 기초 | [요약](/Wordata_JPA/README.md) | [DB](#jpa-db-1st) |
+| Wordata_JPA2 | - JPA 공부 2회차 [목표](#jpa-2)</br> 주제: JPA relationship mapping 1 | [요약](/Wordata_JPA2/README.md) | [DB](#jpa-db-1st) |
+| Wordata_JPA3 | -JPA 공부 3회차 [목표](#jpa-3)</br> 주제: JPA relationship mapping 2 | [요약](/Wordata_JPA3/README.md) | [DB](#jpa-db-2nd) |
 
 ---
 
@@ -26,9 +26,9 @@ WORDATA_Demo를 위해 Clone할 경우 이클립스에서 Import시에는 해당
 
 ---
 
-## Wordata JPA DB(1st)
+## JPA DB 1st
 
-Wordata_JPA 를 위한 DB 페키지
+Employee 관련 DB
 
 - **department**
 
@@ -76,21 +76,107 @@ department 와 employee 관계는 1 대 다 관계이다.
 
 employee 와 address 관계는 1 대 1 관계이다
 
+[맨 위로](#)
+
 ---
 
-## Wordata JPA DB(2nd)
+## JPA DB 2nd
 
-Wordata JPA를 위한 DB
-
-
+Student 관련 DB
 
 
+
+- **department**
+
+  학과 정보를 저장한다.
+
+| Field          | Type        | Null | Key | Default | Extra          |
+|---------------|------------|------|-----|-------|-----------|
+| id             | int         | NO   | PRI | NULL    | auto_increment |
+| departmentName | varchar(50) | NO   |     | NULL    |                |
+
+- **student**
+
+  학생 정보를 저장한다.
+
+  departmentId 필드는 department 레코드를 가르키는 외래키(foreign key)이다.
+
+  student와 department의 관계는 다 대 1 이다.
+
+| Field         | Type        | Null | Key | Default | Extra          |
+|--------------|------------|-----|---|---------|-------------|
+| id            | int         | NO   | PRI | NULL    | auto_increment |
+| studentNumber | varchar(50) | NO   |     | NULL    |                |
+| name          | varchar(50) | NO   |     | NULL    |                |
+| departmentId  | int         | NO   | MUL | NULL    |                |
+| year          | int         | NO   |     | NULL    |                |
+
+- **professor**
+
+  교수 정보를 저장한다.
+
+  departmentId 필드는 department 레코드를 가르키는 외래키이다.
+
+  professor와 department의 관계는 다 대 1 이다.
+
+  
+
+| Field         | Type        | Null | Key | Default | Extra |
+|---------------|-------------|------|-----|---------|-------|
+| id            | int         | NO   | PRI | NULL    |       |
+| professorName | varchar(50) | NO   |     | NULL    |       |
+| departmentId  | int         | NO   | MUL | NULL    |       |
+
+- **course**
+
+  강좌 정보를 저장한다.
+
+  departmentId 필드는 department 레코드를 가르키는 외래키이다.
+
+  course와 department의 관계는 다 대 1 이다.
+
+  prfessorId 필드는 professor 레코드를 가르키는 외래키이다.
+
+  course와 professor의 관계는 다 대 1 이다.
+
+| Field        | Type        | Null | Key | Default | Extra          |
+|--------------|-------------|------|-----|---------|----------------|
+| id           | int         | NO   | PRI | NULL    | auto_increment |
+| courseName   | varchar(50) | NO   |     | NULL    |                |
+| departmentId | int         | NO   | MUL | NULL    |                |
+| unit         | int         | NO   |     | NULL    |                |
+| professorId  | int         | NO   | MUL | NULL    |                |
+| startDate    | date        | YES  |     | NULL    |                |
+
+- **register**
+
+  학생의 수강 신청 정보를 저장한다.
+
+  studentId 필드는 student 레코드를 가르키는 외래키이다.
+
+  register와 student의 관계는 다 대 1 이다.
+
+  courseId 필드는 course 레코드를 가르키는 외래키이다.
+
+  register와 course의 관계는 다 대 1 이다.
+
+| Field      | Type | Null | Key | Default | Extra          |
+|------------|------|------|----|--------|-------------|
+| id         | int  | NO   | PRI | NULL    | auto_increment |
+| studentId  | int  | NO   | MUL | NULL    |                |
+| courseId   | int  | NO   | MUL | NULL    |                |
+| grade      | int  | YES  |     | NULL    |                |
+| createDate | date | YES  |     | NULL    |                |
+
+
+
+[맨 위로](#)
 
 ---
 
 ### JPA 1
 
-
+Employee 관련 DB 에서 Department와 Employee Entity class 구현 repository와 controller 구현
 
 </br>
 
@@ -142,3 +228,14 @@ Wordata JPA를 위한 DB
 
 ---
 
+### JPA 3
+
+다대일 관계로 구현되는 관계의 도메인 모델을 구현
+
+구현된 엔터티 클래스에서 @ManyToOne, @OneToMany 어노테이션이 붙은 멤버 변수들과
+
+위의 ER 다이어그램에서 관계선을 비교하면서 읽어보기 바란다.
+
+꼼꼼히 비교해 보면 일관된 구현 규칙을 발견할 수 있을 것이다.
+
+구현 규칙만 파악하면, 엔터티 클래스 구현이 생각보다 쉅고 단순하다

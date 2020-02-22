@@ -8,6 +8,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -17,26 +19,24 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 @Data
-@ToString(exclude = { "students", "courses", "professors" })
-@EqualsAndHashCode(exclude = { "students", "courses", "professors" }) // 해당 변수들은 다른 테이블과 관계 구현이므로 무시
+@ToString(exclude = { "department", "registrations" })
+@EqualsAndHashCode(exclude = { "department", "registrations" })
 @Entity
-public class Department {
+public class Student {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int id;
 	
-	@Column(name = "departmentName")
 	String name;
 	
-	@JsonIgnore
-	@OneToMany(mappedBy = "department", fetch = FetchType.LAZY)
-	List<Student> students;
+	@Column(name = "studentNumber") //테이블의 필드와 멤버 변수 이름이 다를때 사용
+	String studentNo;
+	
+	@ManyToOne
+	@JoinColumn(name = "departmentId")
+	Department department;
 	
 	@JsonIgnore
-	@OneToMany(mappedBy = "department", fetch = FetchType.LAZY)
-	List<Course> courses;
-	
-	@JsonIgnore
-	@OneToMany(mappedBy = "department", fetch = FetchType.LAZY)
-	List<Professor> professors;
+	@OneToMany(mappedBy = "student", fetch = FetchType.LAZY)
+	List<Registration> registrations;
 }

@@ -8,7 +8,9 @@
 | test               | - thymeleaf, MySQL, Spring Security, mybatis로 간단한 로그인 구현 </br> - 로그인 화면 커스텀 필요 |               |               |
 | Wordata_JPA        | - JPA 공부 1회차 [목표](#jpa-1)</br> 주제: JPA 기초 | [요약](/Wordata_JPA/README.md) | [DB](#jpa-db-1st) |
 | Wordata_JPA2 | - JPA 공부 2회차 [목표](#jpa-2)</br> 주제: JPA relationship mapping 1 | [요약](/Wordata_JPA2/README.md) | [DB](#jpa-db-1st) |
-| Wordata_JPA3 | -JPA 공부 3회차 [목표](#jpa-3)</br> 주제: JPA relationship mapping 2 | [요약](/Wordata_JPA3/README.md) | [DB](#jpa-db-2nd) |
+| Wordata_JPA3 | - JPA 공부 3회차 [목표](#jpa-3)</br> 주제: JPA relationship mapping 2 | [요약](/Wordata_JPA3/README.md) | [DB](#jpa-db-2nd) |
+| Wordata_JPA4 | - JPA 공부 4회차 [목표](#jpa-4)</br> 주제: JPA query creation | [요약](/Wordata_JPA4/README.md) | [DB](#jpa-db-2nd) |
+|  |  |  |  |
 
 ---
 
@@ -239,3 +241,13 @@ Employee 관련 DB 에서 Department와 Employee Entity class 구현 repository�
 꼼꼼히 비교해 보면 일관된 구현 규칙을 발견할 수 있을 것이다.
 
 구현 규칙만 파악하면, 엔터티 클래스 구현이 생각보다 쉅고 단순하다
+
+</br>
+
+[맨 위로](#)
+
+------
+
+### JPA 4
+
+프로젝트 수정 및 JPA Repository 쿼리 메소드 자동 구현 기능 & JPA Repository 쿼리 메소드 이름 규칙 학습

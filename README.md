@@ -10,7 +10,8 @@
 | Wordata_JPA2 | - JPA 공부 2회차 [목표](#jpa-2)</br> 주제: JPA relationship mapping 1 | [요약](/Wordata_JPA2/README.md) | [DB](#jpa-db-1st) |
 | Wordata_JPA3 | - JPA 공부 3회차 [목표](#jpa-3)</br> 주제: JPA relationship mapping 2 | [요약](/Wordata_JPA3/README.md) | [DB](#jpa-db-2nd) |
 | Wordata_JPA4 | - JPA 공부 4회차 [목표](#jpa-4)</br> 주제: JPA query creation | [요약](/Wordata_JPA4/README.md) | [DB](#jpa-db-2nd) |
-| JPA_and_thymeleaf | - JPA&thymeleaf에서 pagination 하기 |  | [DB](#jpa-db-1st) |
+| JPA_and_thymeleaf | - JPA&thymeleaf에서 pagination 하기<br>- thymeleaf,JPA,web,devtools,MySQL,lombok,h2,bootstrap,slf4j 환경 |  | [DB](#jpa-db-1st) |
+| security | - security 구현<br>- thymeleaf, JPA, MySQL, web, devtools, lombok, security 환경 | |  |
 
 ---
 
@@ -22,9 +23,49 @@ WORDATA_Demo를 위해 Clone할 경우 이클립스에서 Import시에는 해당
 
 ---
 
-### test
+### properties
 
-간단하게 mybatis/MySQL 환경에서 Spring Security를 구현하기 위한 test DB로 진행하여 따로 설명은 없음.
+```properties
+### server setting ###
+#server.address=localhost
+#server.port= 8080
+
+
+### MySQL 연동 ###
+
+spring.datasource.url=jdbc:mysql://{localhost:3306}/{DB_name}?useSSL=false&characterEncoding=UTF-8&serverTimezone=Asia/Seoul
+spring.datasource.username=user1
+spring.datasource.password=test123
+#위 두 설정은 계정 명 적용
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+#com.mysql.jdbc.Driver가 있으나 해당 경우는 Deprecated 임. 더 이상 개발 하지 않으며 삭제될 예정이라함.
+
+
+#
+# JPA 설정
+#
+spring.jpa.database=mysql
+# MySQL 을 사용
+spring.jpa.database-platform=org.hibernate.dialect.MySQL5InnoDBDialect
+spring.jpa.hibernate.naming.physical-strategy=org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+# 해당 설정은 DB 필드 이름이 testName 형태이면 필요함 (camel case)
+# 만약 test_name 형식이면 필요하지 않음
+spring.jpa.open-in-view=false
+# OSIV(open session in view)는 웹 요청이 완료될 때까지 동일한 EntityManager를 가지게함.
+# spring boot 기본값은 true인데 확장성 면에서 좋지 않다함.
+spring.jpa.properties.hibernate.show_sql=true
+# 콘솔에 JPA 쿼리 출력
+spring.jpa.properties.hibernate.format_sql=true
+# 콘솔에 출력되는 JPA 쿼리를 가독성 있게 표현
+
+### logging ###
+logging.level.org.hibernate.SQL=DEBUG
+logging.level.org.hibernate.type.descriptor.sql.BasicBinder=TRACE
+# SQL에서 물음표로 표기된 부분( bind parameter )을 로그로 출력해서 확인
+
+```
+
+[https://stackoverflow.com/questions/30549489/what-is-this-spring-jpa-open-in-view-true-property-in-spring-boot](https://stackoverflow.com/questions/30549489/what-is-this-spring-jpa-open-in-view-true-property-in-spring-boot)
 
 ---
 

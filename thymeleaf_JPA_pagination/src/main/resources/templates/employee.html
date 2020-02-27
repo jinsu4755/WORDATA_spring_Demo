@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>employee</title>
+<link rel="stylesheet"
+	href="/webjars/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+<body class="container">
+	<div class="jumbotron">
+		<h2>Employee List</h2>
+	</div>
+	<table class="table">
+		<tr>
+			<th>번호</th>
+			<th>이름</th>
+			<th>학과</th>
+		</tr>
+		<tr th:each="employee: ${employeeList}">
+		<!-- jsp <c:forEach>와 같은 기능 -->
+			<td th:text="${employee.id}"></td>
+			<td th:text="${employee.name}"></td>
+			<td th:text="${employee.department.name}"></td>
+		</tr>
+	</table>
+
+	<nav style="text-align: center;">
+		<ul class="pagination"
+			th:with="start=${T(Math).floor(employeeList.number/10)*10 + 1},
+					last=(${start+9 < employeeList.totalPages ? start+9 : employeeList.totalPages})">
+					
+			<li>
+				<a th:href="@{/employee(page=1)}" aria-label="First"> 
+					<span aria-hidden="true">First</span>
+				</a>
+			</li>
+			<li th:class="${employeeList.first} ? 'disabled'">
+				<a th:href="${employeeList.first} ? '#' : @{/employee(page=${pageList.number})}" aria-label="Previous"> 
+					<span aria-hidden="true">&lt;</span>
+				</a>
+			</li>
+				<li th:each="page: ${#numbers.sequence(start, last)}" th:class="${page == employeeList.number + 1} ? 'active'">
+	            <a th:text="${page}" th:href="@{/employee(page=${page})}"></a>
+        	</li>
+
+        	<li th:class="${employeeList.last} ? 'disabled'">
+	            <a th:href="${employeeList.last} ? '#' : @{/employee(page=${employeeList.number + 2})}" aria-label="Next">
+	                <span aria-hidden="true">&gt;</span>
+	            </a>
+        	</li>
+
+        	<li>
+	            <a th:href="@{/employee(page=${employeeList.totalPages})}" aria-label="Last">
+	                <span aria-hidden="true">Last</span>
+	            </a>
+        	</li>
+		</ul>
+	</nav>
+
+</body>
+</html>

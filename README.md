@@ -10,7 +10,7 @@
 | Wordata_JPA2 | - JPA 공부 2회차 [목표](#jpa-2)</br> 주제: JPA relationship mapping 1 | [요약](/Wordata_JPA2/README.md) | [DB](#jpa-db-1st) |
 | Wordata_JPA3 | - JPA 공부 3회차 [목표](#jpa-3)</br> 주제: JPA relationship mapping 2 | [요약](/Wordata_JPA3/README.md) | [DB](#jpa-db-2nd) |
 | Wordata_JPA4 | - JPA 공부 4회차 [목표](#jpa-4)</br> 주제: JPA query creation | [요약](/Wordata_JPA4/README.md) | [DB](#jpa-db-2nd) |
-| JPA_and_thymeleaf | - JPA&thymeleaf에서 pagination 하기<br>- thymeleaf,JPA,web,devtools,MySQL,lombok,h2,bootstrap,slf4j 환경 |  | [DB](#jpa-db-1st) |
+| thymeleaf_JPA_pagination | - JPA&thymeleaf에서 pagination 하기<br>- thymeleaf,JPA,web,devtools,MySQL,lombok,h2,bootstrap,slf4j 환경 |  | [DB](#jpa-db-1st) |
 | security | - security 구현<br>- thymeleaf, JPA, MySQL, web, devtools, lombok, security 환경 | |  |
 
 ---

@@ -4,7 +4,7 @@
 
 | 프로젝트 폴더 이름 | 내용                                                         | 요약        | 비고     |
 | ------------------ | ------------------------------------------------------------ | ------------- | ------------- |
-| WORDATA_Demo       | - WORDATA 프젝 프론트에서 static, templates 확인             |               |               |
+| WORDATA_Demo       | 수정중 |               |               |
 | test               | - thymeleaf, MySQL, Spring Security, mybatis로 간단한 로그인 구현 </br> - 로그인 화면 커스텀 필요 |               |               |
 | Wordata_JPA        | - JPA 공부 1회차 [목표](#jpa-1)</br> 주제: JPA 기초 | [요약](/Wordata_JPA/README.md) | [DB](#jpa-db-1st) |
 | Wordata_JPA2 | - JPA 공부 2회차 [목표](#jpa-2)</br> 주제: JPA relationship mapping 1 | [요약](/Wordata_JPA2/README.md) | [DB](#jpa-db-1st) |

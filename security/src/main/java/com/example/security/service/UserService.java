@@ -21,4 +21,11 @@ public class UserService {
 			return null;
 		return user;
 	}
+	
+	public void signup (User user) {
+		//db에 유저를 저장해줘야해
+		String pw = EncryptionUtils.encryptMD5(user.getPassword());
+		user.setPassword(pw);
+		userRepository.save(user);
+	}
 }

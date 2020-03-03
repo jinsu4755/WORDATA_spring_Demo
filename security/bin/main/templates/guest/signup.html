@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>sign up</title>
+</head>
+<body>
+	<h1>회원가입</h1>
+	<hr>
+
+	<form th:action="@{/guest/signup}" method="post">
+		<input type="text" name="loginId" placeholder="Id를 입력하시오">
+		<br>
+		<input type="password" name="password" placeholder="비밀번호"><br>
+		<input type="text" name="name" placeholder="이름"><br>
+		<input type="text" name="email" placeholder="이메일"><br>
+		<input type="text" name="departmentId" placeholder="학과번호 1~7"><br>
+		
+		
+		<input type="checkbox" name="userType" value="학생">학생
+		<input type="checkbox" name="userType" value="교수">교수
+		<input type="checkbox" name="userType" value="관리자">관리자
+		<br>
+		
+        <button type="submit">가입하기</button>
+	</form>
+</body>
+</html>

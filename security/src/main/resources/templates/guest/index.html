@@ -18,7 +18,9 @@
 	<h1>index page</h1>
 	<hr>
 	<a sec:authorize="isAnonymous()" th:href="@{/guest/login}">로그인</a>
+	<a sec:authorize="isAnonymous()" th:href="@{/guest/signup}">회원가입</a>
 	<a sec:authorize="isAuthenticated()" th:href="@{/user/logout}">로그아웃</a>
+	
 	</div>
 </body>
 </html>
